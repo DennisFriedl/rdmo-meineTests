@@ -64,6 +64,11 @@ class Value(Model):
         verbose_name=_('Text'),
         help_text=_('The string stored for this value.')
     )
+    user_comment = models.TextField(
+        blank=True,
+        verbose_name=_('Comment'),
+        help_text=_('The user comment stored for this value.')
+    )
     option = models.ForeignKey(
         Option, blank=True, null=True, on_delete=models.SET_NULL, related_name='values',
         verbose_name=_('Option'),

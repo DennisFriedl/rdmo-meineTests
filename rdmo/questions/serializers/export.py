@@ -36,7 +36,9 @@ class QuestionExportSerializer(TranslationSerializerMixin, serializers.ModelSeri
             'unit',
             'width',
             'optionsets',
-            'conditions'
+            'conditions',
+            'help_accordion1', # Feld für den Export verfügbar machen
+            'help_accordion2'  # Feld für den Export verfügbar machen
         )
         trans_fields = (
             'help',

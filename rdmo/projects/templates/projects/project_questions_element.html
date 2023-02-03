@@ -9,14 +9,13 @@
         </div>
 
         <div class="questions-block"
-             ng-repeat="valueset in service.valuesets[questionset.id][service.joinSetPrefix(valueset.set_prefix, valueset.set_index)] | orderBy:'valueset.set_index'"
-             ng-hide="valueset.removed">
+            ng-repeat="valueset in service.valuesets[questionset.id][service.joinSetPrefix(valueset.set_prefix, valueset.set_index)] | orderBy:'valueset.set_index'"
+            ng-hide="valueset.removed">
 
             {% include 'projects/project_questions_remove_set.html' %}
 
             <div class="row">
-                <div ng-repeat="element in questionset.elements"
-                     ng-include src="'element.html'"></div>
+                <div ng-repeat="element in questionset.elements" ng-include src="'element.html'"></div>
             </div>
         </div>
 
@@ -33,5 +32,50 @@
         {% include widget.template_name %}
         {% endif %}
         {% endfor %}
+        <div ng-if="question.help_accordion1">
+            <div class="panel-group" id="accordion1_{$ question.id $}" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a class="accordion-link" role="button" data-toggle="collapse"
+                                data-parent="#accordion1_{$ question.id $}"
+                                data-target="#collapseOne1_{$ question.id $}" href="javascript:void(0);"
+                                aria-expanded="false" aria-controls="collapseOne1_{$ question.id $}">
+                                Beispiel
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne1_{$ question.id $}" class="panel-collapse collapse" role="tabpanel"
+                        aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            {$ question.help_accordion1 $}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="question.help_accordion2">
+            <div class="panel-group" id="accordion2_{$ question.id $}" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a class="accordion-link" role="button" data-toggle="collapse"
+                                data-parent="#accordion2_{$ question.id $}"
+                                data-target="#collapseOne2_{$ question.id $}" href="javascript:void(0);"
+                                aria-expanded="false" aria-controls="collapseOne2_{$ question.id $}">
+                                Warum werde ich das gefragt?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne2_{$ question.id $}" class="panel-collapse collapse" role="tabpanel"
+                        aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            {$ question.help_accordion2 $}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

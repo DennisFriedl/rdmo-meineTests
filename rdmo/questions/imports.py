@@ -153,6 +153,9 @@ def import_question(element, questionset_uri=False, save=False):
     question.unit = element.get('unit') or ''
     question.width = element.get('width')
 
+    question.help_accordion1 = element.get('accordion_1') # Aus dem Dictionary in das Model übernehmen
+    question.help_accordion2 = element.get('accordion_2') # Aus dem Dictionary in das Model übernehmen
+
     conditions = get_m2m_instances(question, element.get('conditions'), Condition)
     optionsets = get_m2m_instances(question, element.get('optionsets'), OptionSet)
 

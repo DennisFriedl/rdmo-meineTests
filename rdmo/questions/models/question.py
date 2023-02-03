@@ -97,6 +97,16 @@ class Question(Model, TranslationMixin):
         verbose_name=_('Help (quinary)'),
         help_text=_('The help text for this question in the quinary language.')
     )
+    help_accordion1 = models.TextField(
+        null=True, blank=True,
+        verbose_name=_('Help (accordion, 1)'),
+        help_text=_('The help text for this question to be displayed in the first accordion.')
+    )
+    help_accordion2 = models.TextField(
+        null=True, blank=True,
+        verbose_name=_('Help (accordion, 2)'),
+        help_text=_('The help text for this question to be displayed in the second accordion.')
+    )
     text_lang1 = models.TextField(
         null=True, blank=True,
         verbose_name=_('Text (primary)'),

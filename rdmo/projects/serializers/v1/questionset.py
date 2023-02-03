@@ -84,7 +84,9 @@ class QuestionSerializer(MarkdownSerializerMixin, serializers.ModelSerializer):
             'optionsets',
             'is_collection',
             'is_optional',
-            'has_conditions'
+            'has_conditions',
+            'help_accordion1', # help_accordion1 aus der Datenbank in Python verfügbar machen
+            'help_accordion2'  # help_accordion2 aus der Datenbank in Python verfügbar machen
         )
 
     def get_optionsets(self, obj):

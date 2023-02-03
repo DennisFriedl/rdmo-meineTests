@@ -102,6 +102,9 @@ class XMLRenderer(BaseXMLRenderer):
         self.render_text_element(xml, 'step', {}, question['step'])
         self.render_text_element(xml, 'unit', {}, question['unit'])
         self.render_text_element(xml, 'width', {}, question['width'])
+        
+        self.render_text_element(xml, 'accordion_1', {}, question['help_accordion1']) # Felder als XML-Element ausgeben
+        self.render_text_element(xml, 'accordion_2', {}, question['help_accordion2']) # Felder als XML-Element ausgeben
 
         xml.startElement('optionsets', {})
         if 'optionsets' in question and question['optionsets']:
